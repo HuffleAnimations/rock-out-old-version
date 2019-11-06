@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.GymListActivity"
             android:label="Boulder Gym List">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

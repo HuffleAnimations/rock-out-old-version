@@ -2,4 +2,5 @@
     <string name="app_name">Rock Out</string>
     <string name="gym_name_placeholder">Gym Name</string>
     <string name="return_string">Return to list</string>
+    <string name="add_gym">Add Gym</string>
 </resources>

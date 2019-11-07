@@ -6,9 +6,11 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -21,10 +23,11 @@ import be.huffle.rockout.R;
 import be.huffle.rockout.adapters.GymListAdapter;
 import be.huffle.rockout.repositories.MockGymRepository;
 
-public class GymListActivity extends AppCompatActivity implements Drawer.OnDrawerItemClickListener
+public class GymListActivity extends AppCompatActivity implements Drawer.OnDrawerItemClickListener, View.OnClickListener
 {
 	private GymListAdapter adapter;
 	private MockGymRepository repository = new MockGymRepository();
+	private Button addGymButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -60,11 +63,31 @@ public class GymListActivity extends AppCompatActivity implements Drawer.OnDrawe
 						.withSelectable(false)
 				)
 				.build();
+
+		addGymButton = findViewById(R.id.b_add_gym);
+		addGymButton.setOnClickListener(this);
 	}
 
 	@Override
 	public boolean onItemClick(View view, int position, IDrawerItem drawerItem)
 	{
 		return false;
+	}
+
+	@Override
+	public void onClick(View view)
+	{
+		switch (view.getId())
+		{
+			case R.id.b_add_gym:
+				openAddGymActivity();
+				break;
+		}
+	}
+
+	private void openAddGymActivity()
+	{
+		Intent intent = new Intent(this, AddGymActivity.class);
+		startActivity(intent);
 	}
 }

@@ -13,7 +13,7 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".activities.GymListActivity"
-            android:label="Boulder Gym List">
+            android:label="Rock Out">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

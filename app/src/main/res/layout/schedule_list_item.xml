@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_time_period"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/time_period_placeholder" />
+
+    <TextView
+        android:id="@+id/tv_monday_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/monday"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_time_period" />
+
+    <TextView
+        android:id="@+id/tv_monday_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_monday_label"
+        app:layout_constraintTop_toTopOf="@+id/tv_monday_label"
+        tools:text="@string/monday_placeholder" />
+
+    <TextView
+        android:id="@+id/tv_tuesday_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tuesday"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_monday_label" />
+
+    <TextView
+        android:id="@+id/tv_tuesday_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_tuesday_label"
+        app:layout_constraintTop_toTopOf="@+id/tv_tuesday_label"
+        tools:text="@string/tuesday_placeholder" />
+
+    <TextView
+        android:id="@+id/tv_wednesday_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/wednesday"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tuesday_label" />
+
+    <TextView
+        android:id="@+id/tv_wednesday_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_wednesday_label"
+        app:layout_constraintTop_toTopOf="@+id/tv_wednesday_label"
+        tools:text="@string/wednesday_placeholder" />
+
+    <TextView
+        android:id="@+id/tv_thursday_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/thursday"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_wednesday_label" />
+
+    <TextView
+        android:id="@+id/tv_thursday_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_thursday_label"
+        app:layout_constraintTop_toTopOf="@+id/tv_thursday_label"
+        tools:text="@string/thursday_placeholder" />
+
+    <TextView
+        android:id="@+id/tv_friday_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/friday"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_thursday_label" />
+
+    <TextView
+        android:id="@+id/tv_friday_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_friday_label"
+        app:layout_constraintTop_toTopOf="@+id/tv_friday_label"
+        tools:text="@string/friday_placeholder" />
+
+    <TextView
+        android:id="@+id/tv_saturday_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/saturday"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_friday_label" />
+
+    <TextView
+        android:id="@+id/tv_saturday_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_saturday_label"
+        app:layout_constraintTop_toTopOf="@+id/tv_saturday_label"
+        tools:text="@string/saturday_placeholder" />
+
+    <TextView
+        android:id="@+id/tv_sunday_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/sunday"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_saturday_label" />
+
+    <TextView
+        android:id="@+id/tv_sunday_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_sunday_label"
+        app:layout_constraintTop_toTopOf="@+id/tv_sunday_label"
+        tools:text="@string/sunday_placeholder" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

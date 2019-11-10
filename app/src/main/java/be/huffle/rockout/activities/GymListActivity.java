@@ -12,6 +12,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
@@ -27,7 +28,7 @@ public class GymListActivity extends AppCompatActivity implements Drawer.OnDrawe
 {
 	private GymListAdapter adapter;
 	private MockGymRepository repository = new MockGymRepository();
-	private Button addGymButton;
+	private FloatingActionButton addGymButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -64,7 +65,7 @@ public class GymListActivity extends AppCompatActivity implements Drawer.OnDrawe
 				)
 				.build();
 
-		addGymButton = findViewById(R.id.b_add_gym);
+		addGymButton = findViewById(R.id.fb_add_gym);
 		addGymButton.setOnClickListener(this);
 	}
 
@@ -79,7 +80,7 @@ public class GymListActivity extends AppCompatActivity implements Drawer.OnDrawe
 	{
 		switch (view.getId())
 		{
-			case R.id.b_add_gym:
+			case R.id.fb_add_gym:
 				openAddGymActivity();
 				break;
 		}

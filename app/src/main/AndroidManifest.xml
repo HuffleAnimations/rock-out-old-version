@@ -11,7 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activities.AddGymActivity"></activity>
+        <activity
+            android:name=".activities.AddGymActivity"
+            android:label="@string/add_gym"
+            android:parentActivityName=".activities.GymListActivity"/>
         <activity
             android:name=".activities.GymListActivity"
             android:label="Rock Out">

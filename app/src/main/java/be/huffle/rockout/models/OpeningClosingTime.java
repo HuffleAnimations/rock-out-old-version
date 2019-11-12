@@ -1,7 +1,5 @@
 package be.huffle.rockout.models;
 
-import java.time.LocalTime;
-
 public class OpeningClosingTime
 {
 	private LocalTime openingTime;

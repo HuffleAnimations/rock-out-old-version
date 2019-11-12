@@ -17,15 +17,6 @@ public class MockGymRepository
 		addGym("City Lizard");
 		addGym("Klimax");
 		addGym("Maniak");
-		//////////////////
-		addGym("test");
-		addGym("test");
-		addGym("test");
-		addGym("test");
-		addGym("test");
-		addGym("test");
-		addGym("test");
-		addGym("test");
 	}
 
 	public void addGym(String name)

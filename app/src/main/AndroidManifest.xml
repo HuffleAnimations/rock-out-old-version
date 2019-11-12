@@ -12,9 +12,13 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:name=".activities.AddTimeScheduleActivity"
+            android:label="@string/add_time_schedule"
+            android:parentActivityName=".activities.AddGymActivity"/>
+        <activity
             android:name=".activities.AddGymActivity"
             android:label="@string/add_gym"
-            android:parentActivityName=".activities.GymListActivity"/>
+            android:parentActivityName=".activities.GymListActivity" />
         <activity
             android:name=".activities.GymListActivity"
             android:label="Rock Out">

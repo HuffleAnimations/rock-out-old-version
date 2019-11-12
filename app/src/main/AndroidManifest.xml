@@ -13,8 +13,7 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".activities.AddTimeScheduleActivity"
-            android:label="@string/add_time_schedule"
-            android:parentActivityName=".activities.AddGymActivity"/>
+            android:label="@string/add_time_schedule"/>
         <activity
             android:name=".activities.AddGymActivity"
             android:label="@string/add_gym"

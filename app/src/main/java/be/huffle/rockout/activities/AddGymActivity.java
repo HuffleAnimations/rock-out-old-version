@@ -2,6 +2,7 @@ package be.huffle.rockout.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -14,7 +15,9 @@ import android.widget.Toast;
 import java.util.Objects;
 
 import be.huffle.rockout.R;
+import be.huffle.rockout.adapters.LevelAdapter;
 import be.huffle.rockout.models.Gym;
+import be.huffle.rockout.repositories.MockLevelRepository;
 
 public class AddGymActivity extends AppCompatActivity implements View.OnClickListener
 {
@@ -25,6 +28,8 @@ public class AddGymActivity extends AppCompatActivity implements View.OnClickLis
 	private EditText siteText;
 	private RecyclerView scheduleRecyclerView;
 	private RecyclerView levelRecyclerView;
+	private LevelAdapter levelAdapter;
+	private MockLevelRepository levelRepository = new MockLevelRepository();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -47,7 +52,14 @@ public class AddGymActivity extends AppCompatActivity implements View.OnClickLis
 		addressText = findViewById(R.id.ed_gym_address);
 		siteText = findViewById(R.id.ed_gym_site);
 		scheduleRecyclerView = findViewById(R.id.rv_gym_schedules);
+
 		levelRecyclerView = findViewById(R.id.rv_gym_courses);
+		LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+		levelRecyclerView.setLayoutManager(layoutManager);
+		levelRecyclerView.setHasFixedSize(true);
+
+		levelAdapter = new LevelAdapter(levelRepository.getLevels());
+		levelRecyclerView.setAdapter(levelAdapter);
 	}
 
 	@Override

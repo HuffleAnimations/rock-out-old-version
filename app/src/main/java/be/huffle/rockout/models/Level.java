@@ -6,6 +6,11 @@ public class Level
 	private String levelColour;
 	private String levelColourCode;
 
+	public Level(String name)
+	{
+		levelName = name;
+	}
+
 	public Level(String name, String colour, String colourCode)
 	{
 		levelName = name;

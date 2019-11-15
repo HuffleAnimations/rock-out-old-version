@@ -11,19 +11,19 @@ public class MockLevelRepository
 
 	public MockLevelRepository()
 	{
-		addLevel("3", "black", "#000000");
-		addLevel("4", "green", "#329146");
-		addLevel("5", "purple", "#BD65EB");
-		addLevel("6a", "blue", "#5677FA");
-		addLevel("6b", "red", "#EB3C3B");
-		addLevel("6c", "gray", "#7D7979");
-		addLevel("7a", "orange", "#EC8C1E");
-		addLevel("7b", "yellow", "#F0DC1F");
+		addLevel("3", "#000000");
+		addLevel("4",  "#329146");
+		addLevel("5",  "#BD65EB");
+		addLevel("6a",  "#5677FA");
+		addLevel("6b", "#EB3C3B");
+		addLevel("6c",  "#7D7979");
+		addLevel("7a",  "#EC8C1E");
+		addLevel("7b", "#F0DC1F");
 	}
 
-	public void addLevel(String name, String colour, String colourCode)
+	public void addLevel(String name, String colourCode)
 	{
-		levels.add(new Level(name, colour, colourCode));
+		levels.add(new Level(name, colourCode));
 	}
 
 	public List<Level> getLevels()

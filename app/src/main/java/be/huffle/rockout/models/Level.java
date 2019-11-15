@@ -3,7 +3,6 @@ package be.huffle.rockout.models;
 public class Level
 {
 	private String levelName;
-	private String levelColour;
 	private String levelColourCode;
 
 	public Level(String name)
@@ -11,10 +10,9 @@ public class Level
 		levelName = name;
 	}
 
-	public Level(String name, String colour, String colourCode)
+	public Level(String name, String colourCode)
 	{
 		levelName = name;
-		levelColour = colour;
 		levelColourCode = colourCode;
 	}
 
@@ -26,16 +24,6 @@ public class Level
 	public void setLevelName(String levelName)
 	{
 		this.levelName = levelName;
-	}
-
-	public String getLevelColour()
-	{
-		return levelColour;
-	}
-
-	public void setLevelColour(String levelColour)
-	{
-		this.levelColour = levelColour;
 	}
 
 	public String getLevelColourCode()

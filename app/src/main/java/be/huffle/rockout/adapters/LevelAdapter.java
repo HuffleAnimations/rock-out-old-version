@@ -6,7 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +25,7 @@ import be.huffle.rockout.models.Level;
 public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.LevelViewHolder>
 {
 	private List<Level> levels = new ArrayList<>();
+	private View view;
 
 	public LevelAdapter(List<Level> levels)
 	{
@@ -34,18 +38,25 @@ public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.LevelViewHol
 		Context context = parent.getContext();
 		int layoutIdForListItem = R.layout.course_list_item;
 		LayoutInflater inflater = LayoutInflater.from(context);
-		View view = inflater.inflate(layoutIdForListItem, parent, false);
+		view = inflater.inflate(layoutIdForListItem, parent, false);
 		return new LevelViewHolder(view);
 	}
 
 	@Override
-	public void onBindViewHolder(LevelViewHolder holder, int position)
+	public void onBindViewHolder(final LevelViewHolder holder, int position)
 	{
 		Level currentLevel = levels.get(position);
 		holder.level = currentLevel;
 		holder.levelName.setText(currentLevel.getLevelName());
-		holder.levelColourName.setText(currentLevel.getLevelColour());
 		holder.levelColour.setBackgroundColor(Color.parseColor(currentLevel.getLevelColourCode()));
+		holder.deleteButton.setOnClickListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				removeLevel(holder.getAdapterPosition());
+			}
+		});
 	}
 
 	@Override
@@ -54,20 +65,26 @@ public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.LevelViewHol
 		return levels.size();
 	}
 
+	public void removeLevel(int position)
+	{
+		levels.remove(position);
+		notifyDataSetChanged();
+	}
+
 	public class LevelViewHolder extends RecyclerView.ViewHolder
 	{
 		private Level level;
-		private TextView levelName;
-		private TextView levelColourName;
+		private EditText levelName;
 		private Button levelColour;
+		private ImageButton deleteButton;
 
 		public LevelViewHolder(View itemView)
 		{
 			super(itemView);
 
 			levelName = itemView.findViewById(R.id.tv_level_name);
-			levelColourName = itemView.findViewById(R.id.tv_level_colour);
 			levelColour = itemView.findViewById(R.id.b_colour);
+			deleteButton = itemView.findViewById(R.id.ib_delete);
 		}
 	}
 }

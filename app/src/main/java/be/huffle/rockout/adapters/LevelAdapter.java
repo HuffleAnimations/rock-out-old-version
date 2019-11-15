@@ -21,11 +21,13 @@ import java.util.List;
 
 import be.huffle.rockout.R;
 import be.huffle.rockout.models.Level;
+import yuku.ambilwarna.AmbilWarnaDialog;
 
 public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.LevelViewHolder>
 {
 	private List<Level> levels = new ArrayList<>();
 	private View view;
+	private int defaultColour;
 
 	public LevelAdapter(List<Level> levels)
 	{
@@ -49,6 +51,14 @@ public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.LevelViewHol
 		holder.level = currentLevel;
 		holder.levelName.setText(currentLevel.getLevelName());
 		holder.levelColour.setBackgroundColor(Color.parseColor(currentLevel.getLevelColourCode()));
+		holder.levelColour.setOnClickListener(new View.OnClickListener()
+		{
+			@Override
+			public void onClick(View v)
+			{
+				openColourPicker(holder);
+			}
+		});
 		holder.deleteButton.setOnClickListener(new View.OnClickListener()
 		{
 			@Override
@@ -57,6 +67,23 @@ public class LevelAdapter extends RecyclerView.Adapter<LevelAdapter.LevelViewHol
 				removeLevel(holder.getAdapterPosition());
 			}
 		});
+	}
+
+	private void openColourPicker(final LevelViewHolder holder)
+	{
+		AmbilWarnaDialog colorPicker = new AmbilWarnaDialog(view.getContext(), defaultColour, new AmbilWarnaDialog.OnAmbilWarnaListener() {
+			@Override
+			public void onCancel(AmbilWarnaDialog dialog) {
+
+			}
+
+			@Override
+			public void onOk(AmbilWarnaDialog dialog, int colour) {
+				defaultColour = colour;
+				holder.levelColour.setBackgroundColor(defaultColour);
+			}
+		});
+		colorPicker.show();
 	}
 
 	@Override

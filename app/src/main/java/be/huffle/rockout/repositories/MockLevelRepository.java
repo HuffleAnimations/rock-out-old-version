@@ -19,6 +19,7 @@ public class MockLevelRepository
 		addLevel("6c",  "#7D7979");
 		addLevel("7a",  "#EC8C1E");
 		addLevel("7b", "#F0DC1F");
+		addLevel("8", "#F0DC1A");
 	}
 
 	public void addLevel(String name, String colourCode)
